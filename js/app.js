@@ -18,8 +18,8 @@ function initialize() {
         feedId++;
         // add the bootstrap accordion animation dynamically
         $feedInfo = $('<div>').addClass('div-info collapse').attr('id', feedId );
-        $feedTitle = $('<h4>').addClass('div-toggle').html('<span class="glyphicon glyphicon-heart"></span>' + '<a href="#" data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
-        
+        $feedTitle = $('<h4>').addClass('div-toggle').html('<a href="#" data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
+        // ion-social-rss
         $feedContent = $('<p>').append(entry.content);
         $feedBtn = $('<p>').addClass('btn btn-danger').html('<a target="_blank" class="white" href="' + entry.link + '">' + 'Read More'); // window.open(this.entry.link);
         $feedDate = $('<small>').append(entry.publishedDate).addClass('pull-right');
