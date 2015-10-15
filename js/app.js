@@ -8,7 +8,7 @@ function initialize() {
     if (!result.error) {
       var $feedContainer = $('#feed');
       // create a feed Id to reference for data-target value
-      var feedId = 0;
+      var feedId = 1;
       // loop through the feed
       for (var i = 0; i < result.feed.entries.length; i++) {
         var entry = result.feed.entries[i];
@@ -19,9 +19,9 @@ function initialize() {
         $feedRow = $('<div>').addClass('row');
         // add the bootstrap accordion animation dynamically
         $feedInfo = $('<div>').addClass('div-info collapse').attr('id', feedId );
-        $feedTitle = $('<h4 style="height: 40px;">').addClass('div-toggle').html('<a data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
+        $feedTitle = $('<div>').addClass('div-toggle').html('<h4><a class="white" data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
         
-        $feedPhoto = $('<img style="width: 360px;" src="' + entry.mediaGroups[0].contents[0].thumbnails[0].url + '">');
+        $feedPhoto = $('<div class="photoDiv"><img src="' + entry.mediaGroups[0].contents[0].thumbnails[0].url + '">');
         $feedContent = $('<p>').append(entry.content);
         $feedBtn = $('<p>').addClass('btn btn-primary btn-sm').html('<a target="_blank" class="white" href="' + entry.link + '">' + 'Read More'); 
         $feedDate = $('<small>').append(entry.publishedDate).addClass('pull-right');
@@ -30,9 +30,14 @@ function initialize() {
         $feedDiv.append($feedTitle, $feedPhoto, $feedInfo);
         
         // load into the DOM
-        $feedContainer.append($feedDiv);
-        //console.log(entry);
-        //console.log(entry.mediaGroups[0].contents[0].thumbnails[0].url);
+        // add a row div to clear floats after every 2 divs
+        if(feedId % 2 === 0) {
+           $feedContainer.append($feedRow, $feedDiv);
+        }
+        else {
+          $feedContainer.append($feedDiv);          
+        }
+
       } // end for loop
     }
 
