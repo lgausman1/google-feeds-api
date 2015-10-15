@@ -1,1 +1,22 @@
 /* project styles */
+.white { color: white; }
+.white:hover,
+.white:visited { color: white; }
+.feedDiv {
+    min-height: 60px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.div-info {
+	margin-top: 25px;
+}
+.div-toggle {
+	background-color: black;
+	padding: 10px 0 0 10px;
+	height: 70px;
+}
+.photoDiv {
+	width: auto;
+	overflow: hidden;
+}

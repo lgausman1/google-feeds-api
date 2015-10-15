@@ -1,4 +1,4 @@
 # google-feeds-api
 single page app with a google feeds API
 
-I plan to use Bootstrap and jQuery to build out the page and functionality. I will also evaluate whether it would be beneficial to use Angular
+A TED Talks Feed utilizing Google Feeds API, Bootstrap and jQuery. The feeds are loaded dynamically with title, photo, description, date and a link to the full-page feed.
