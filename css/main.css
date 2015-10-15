@@ -33,4 +33,10 @@ a {
 	width: auto;
 	height: auto;
 	overflow: hidden;
+        padding: 0 20px 20px 20px;
+        background-color: black;
+}
+
+.photoDiv img {
+    max-width: 100%;
 }
