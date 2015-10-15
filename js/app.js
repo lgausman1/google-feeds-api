@@ -21,7 +21,7 @@ function initialize() {
         $feedInfo = $('<div>').addClass('div-info collapse').attr('id', feedId );
         $feedTitle = $('<div>').addClass('div-toggle').html('<h4><a class="white" data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
         
-        $feedPhoto = $('<div class="photoDiv"><img src="' + entry.mediaGroups[0].contents[0].thumbnails[0].url + '">');
+        $feedPhoto = $('<div class="photoDiv"><a class="white" data-toggle="collapse" data-target="#' + feedId + '"><img src="' + entry.mediaGroups[0].contents[0].thumbnails[0].url + '">');
         $feedContent = $('<p>').append(entry.content);
         $feedBtn = $('<p>').addClass('btn btn-primary btn-sm').html('<a target="_blank" class="white" href="' + entry.link + '">' + 'Read More'); 
         $feedDate = $('<small>').append(entry.publishedDate).addClass('pull-right');
