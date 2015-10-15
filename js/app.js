@@ -14,22 +14,25 @@ function initialize() {
         var entry = result.feed.entries[i];
         // build the content
         $feedDiv = $('<div>');
-        $feedDiv.addClass('col-md-9 col-md-offset-1 feedDiv');
+        $feedDiv.addClass('col-md-6 feedDiv');
         feedId++;
+        $feedRow = $('<div>').addClass('row');
         // add the bootstrap accordion animation dynamically
         $feedInfo = $('<div>').addClass('div-info collapse').attr('id', feedId );
-        $feedTitle = $('<h4>').addClass('div-toggle').html('<a href="#' + feedId + '" data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
+        $feedTitle = $('<h4 style="height: 40px;">').addClass('div-toggle').html('<a data-toggle="collapse" data-target="#' + feedId + '">' + entry.title);
         
+        $feedPhoto = $('<img style="width: 360px;" src="' + entry.mediaGroups[0].contents[0].thumbnails[0].url + '">');
         $feedContent = $('<p>').append(entry.content);
-        $feedBtn = $('<p>').addClass('btn btn-danger').html('<a target="_blank" class="white" href="' + entry.link + '">' + 'Read More'); // window.open(this.entry.link);
+        $feedBtn = $('<p>').addClass('btn btn-primary btn-sm').html('<a target="_blank" class="white" href="' + entry.link + '">' + 'Read More'); 
         $feedDate = $('<small>').append(entry.publishedDate).addClass('pull-right');
         $feedInfo.append($feedContent, $feedBtn, $feedDate);
-        $feedDiv.append($feedTitle, $feedInfo);
+
+        $feedDiv.append($feedTitle, $feedPhoto, $feedInfo);
         
         // load into the DOM
         $feedContainer.append($feedDiv);
-       
         //console.log(entry);
+        //console.log(entry.mediaGroups[0].contents[0].thumbnails[0].url);
       } // end for loop
     }
 
