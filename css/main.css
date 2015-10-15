@@ -3,7 +3,11 @@ a {
 	cursor: pointer;
 }
 .red-header {
-	background-color: red;
+	background-color: #E50000;
+        /* add inner shadow */
+        -moz-box-shadow:    inset 0 0 10px #BF0000;
+        -webkit-box-shadow: inset 0 0 10px #BF0000;
+        box-shadow:         inset 0 0 10px #BF0000;
 	padding: 25px;
 	margin-bottom: 40px;
 }
