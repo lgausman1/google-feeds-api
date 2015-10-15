@@ -7,10 +7,7 @@ a {
 	padding: 25px;
 	margin-bottom: 40px;
 }
-.red-footer {
-	background-color: red;
-	padding: 25px;
-}
+
 .white { color: white; }
 .white:hover,
 .white:visited { color: white; }
